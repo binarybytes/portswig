@@ -1,1 +1,32 @@
 
+access controls (ac's):
+vertical (access given only to user + seperation of duties/least privileged)
+horizontal (users' have access to resources += not see other users objects)
+context-dependent (restrictions based on interaction with resources e.g, changes to cart post-payment =!)
+
+broken ac:
+vertical privilege escalation: user>admin 
+
+unprotected funcs:
+-a user can browse to: https://insecure-website.com/admin
+-can find an admin url link within that page https://insecure-website.com/robots.txt
+
+lab1: 
+-dockerimageurl.com/robots.txt
+-dockerimageurl.com/adminstrator-panel
+-delete user.
+lab2:
+-view sloc (r.clik)
+-ctrl.F + 'admin'
+-e.g:
+var isAdmin = false;
+if (isAdmin) {
+   var topLinksTag = document.getElementsByClassName("top-links")[0];
+   var adminPanelTag = document.createElement('a');
+   adminPanelTag.setAttribute('href', '/admin-zycnrd');
+   adminPanelTag.innerText = 'Admin panel';
+   topLinksTag.append(adminPanelTag);
+   topLinksTag.append(' |');
+   
+   
+   
