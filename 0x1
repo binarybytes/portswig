@@ -29,4 +29,16 @@ if (isAdmin) {
    topLinksTag.append(' |');
    
    
-   
+ lab3:
+ burp>proxy>admin=true
+ 
+ lab4:
+ burp>proxy/intercept
+ lab>my-account
+ send email request to burp repeater>
+ add "roleid":2 > JSON body
+ {"email":"test", "roleid":2}
+ 
+ 
+ lab5:
+ 
